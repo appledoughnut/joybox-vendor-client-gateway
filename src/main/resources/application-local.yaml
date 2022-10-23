@@ -3,18 +3,17 @@ spring:
     gateway:
       routes:
         - id: user-service
-          uri: http://user.joybox.local
+          uri: http://localhost:80
           predicates:
             - Path=/users/**
           filters:
             - RewritePath=/users/(?<path>.*),/api/vendor/$\{path}
             - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
         - id: product-service
-          uri: https://product.joybox.local
+          uri: https://localhost:80
           predicates:
-            - Path=/products/**
+            - Path=/products
           filters:
-            - RewritePath=/users/(?<path>.*),/api/$\{path}
             - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
         cors-configurations:
@@ -23,4 +22,6 @@ spring:
             allow-credentials: true
             allowedHeaders: '*'
             allowedMethods: '*'
-
+logging:
+  level:
+    org.springframework.cloud.gateway.handler.RoutePredicateHandlerMapping: DEBUG

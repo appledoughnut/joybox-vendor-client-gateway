@@ -1,0 +1,26 @@
+## SIGNUP
+POST http://localhost:8080/users/signup
+Content-Type: application/json
+
+{
+  "email": "jonghoon.lee@gmail.com",
+  "password": "12345678",
+  "name": "Jonghoon"
+}
+
+###
+
+## LOGIN
+POST http://localhost:8080/users/login
+Content-Type: application/json
+
+{
+  "email": "jonghoon.lee@gmail.com",
+  "password": "12345678"
+}
+
+###
+## GET ME
+GET http://localhost:8080/users/me
+Cookie: jwt=eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE2NjY1OTgyMDUsInZlbmRvcklkIjoiMSJ9.kYZSF3kK-OLcDFMvk5TCHnFm9FX637XmGNhbkN5zF4vncekDUT5i_WLVJ_dDsSurYoInw0GLL_lfY0MvVkl70xU_FuX7Vl3TGqNU6NsDO08CRApnVlGzoo8f-leDrcxP-lfKWpY_Y_hHHCOOalt8Ain6oNt1mWCaDqOeLyVLX0tfSmcbtFHZL1ewxo5GaYIHth8d_pDFvuNnZAYJ05SQjBFTpmy8YoSAzb2KuGFzIzNHNebnPA4Mvt40gkLXnZh3WvSbTbtTLMeqPPZHrqJaaBzYoAz6mtOhRrlo4OL2RT8m7F3ZZgBeqpcplKesDIPmA5qbLNO3ZqEhypDTy7UFXg
+
