@@ -17,12 +17,14 @@ spring:
           predicates:
             - Path=/products/**
           filters:
-            - RewritePath=/users/(?<path>.*),/api/$\{path}
+            - RewritePath=/products/(?<path>.*),/api/$\{path}
             - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: 'http://pmw.joybox.info'
+            allowedOrigins:
+            - 'http://pmw.joybox.info'
+            - 'http://localhost:8080'
             allow-credentials: true
             allowedHeaders: '*'
             allowedMethods: '*'
