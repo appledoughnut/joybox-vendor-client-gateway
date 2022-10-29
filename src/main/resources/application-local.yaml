@@ -14,6 +14,7 @@ spring:
           predicates:
             - Path=/products
           filters:
+            - RewritePath=/users/(?<path>.*),/api/$\{path}
             - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
         cors-configurations:
